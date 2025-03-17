@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } elseif (isset($_POST['clear'])) {
         unset($_SESSION['cart']);
     }
-    header("Location: cart.php");
+    header("Location: index.php?page=cart");
     exit();
 }
 

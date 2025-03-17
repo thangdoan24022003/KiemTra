@@ -1,5 +1,6 @@
 <?php
-require_once '../../config/db.php';
+require_once __DIR__ . '/../../config/db.php';
+
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $masv = $_POST['masv'];
@@ -39,6 +40,6 @@ $nganhHocList = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </label><br>
         <button type="submit">Thêm</button>
     </form>
-    <a href="index.php">Quay lại</a>
+    <a href="index.php?page=sinhvien">Quay lại</a>
 </body>
 </html>

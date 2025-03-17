@@ -14,11 +14,15 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
             echo "<h3>Chào mừng đến với trang chủ!</h3>";
             echo "<p>Đây là trang chính của hệ thống đăng ký học phần. Vui lòng chọn các chức năng ở menu trên để tiếp tục.</p>";
             break;
-
         case 'sinhvien':
             include 'views/sinhvien/index.php';
             break;
-
+        case 'create':
+            include 'views/sinhvien/create.php';
+            break;
+        case 'edit':
+            include 'views/sinhvien/edit.php';
+            break;
         case 'hocphan':
             include 'views/hocphan/register.php';
             break;

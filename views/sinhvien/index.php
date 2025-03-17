@@ -1,4 +1,11 @@
 <?php
+require_once __DIR__ . '/../../config/db.php';
+
+if (!isset($pdo)) {
+    die("Lỗi: Kết nối cơ sở dữ liệu không tồn tại!");
+}
+
+// Lấy danh sách sinh viên
 $stmt = $pdo->query("
     SELECT sv.*, nh.TenNganh 
     FROM SinhVien sv 
@@ -28,10 +35,10 @@ $sinhVienList = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <td><?php echo $sv['TenNganh']; ?></td>
         <td>
             <a href="views/sinhvien/detail.php?masv=<?php echo $sv['MaSV']; ?>">Chi tiết</a> |
-            <a href="views/sinhvien/edit.php?masv=<?php echo $sv['MaSV']; ?>">Sửa</a> |
+            <a href="index.php?page=edit&masv=<?php echo $sv['MaSV']; ?>">Sửa</a> |
             <a href="views/sinhvien/delete.php?masv=<?php echo $sv['MaSV']; ?>" onclick="return confirm('Bạn có chắc?')">Xóa</a>
         </td>
     </tr>
     <?php endforeach; ?>
 </table>
-<a href="views/sinhvien/create.php">Thêm Sinh Viên</a>
+<a href="index.php?page=create">Thêm Sinh Viên</a>
