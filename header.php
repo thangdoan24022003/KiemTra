@@ -25,59 +25,63 @@ $sinhVien = $stmt->fetch(PDO::FETCH_ASSOC);
     <title>Website Đăng Ký Học Phần</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f0f2f5;
         }
         .header {
             background-color: #fff;
-            padding: 15px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
         .header h2 {
             margin: 0;
-            display: inline-block;
-            color: #333;
+            color: #007bff;
+            font-weight: bold;
         }
         .welcome {
-            display: inline-block;
-            margin-left: 20px;
-            color: #555;
+            font-size: 16px;
+            color: #333;
         }
         .nav-links {
-            margin-top: 10px;
+            display: flex;
+            gap: 15px;
         }
         .nav-links a {
-            display: inline-block;
-            margin-right: 10px;
-            padding: 10px;
+            padding: 8px 15px;
             background-color: #007bff;
             color: #fff;
             text-decoration: none;
-            border-radius: 3px;
+            border-radius: 5px;
+            transition: 0.3s;
+            font-size: 14px;
         }
         .nav-links a:hover {
             background-color: #0056b3;
         }
-        .logout {
-            display: inline-block;
-            margin-left: 20px;
-        }
         .logout a {
             color: #dc3545;
             text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .logout a:hover {
+            color: #b02a37;
         }
         .container {
             max-width: 1200px;
             margin: 20px auto;
             padding: 20px;
             background: #fff;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
@@ -98,3 +102,5 @@ $sinhVien = $stmt->fetch(PDO::FETCH_ASSOC);
             <a href="views/login/logout.php" onclick="return confirm('Bạn có chắc muốn đăng xuất?')">Đăng Xuất</a>
         </div>
     </div>
+</body>
+</html>
